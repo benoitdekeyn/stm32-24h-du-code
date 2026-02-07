@@ -6,12 +6,29 @@ Objectif :
 - Vérifier le ping.
 - Se connecter en SSH et copier des fichiers en SCP.
 
+## Prérequis
+
+Passer en mode super utilisateur (root) si nécessaire :
+
+```sh
+su root
+```
+
 ## Schéma d’adressage (exemple)
 
 - STM32 : `192.168.1.50/24`
 - PC Windows : `192.168.1.10/24`
 
 ## 1) Côté STM32 : IP statique (temporaire)
+
+Récupérer le nom de l’interface Ethernet :
+
+```sh
+ifconfig
+```
+Dans notre cas l'interface Ethernet se nomme `eth0`.
+
+Assigner une IP statique (temporaire, perdue au redémarrage) :
 
 ```sh
 ifconfig eth0 192.168.1.50 netmask 255.255.255.0 up
@@ -70,6 +87,32 @@ ping 192.168.1.50
 ## 4) SSH vers la STM32
 
 ### Depuis PowerShell ou WSL
+
+Si la version de SSH est assez récente, la connexion ssh peut se faire simplement avec :
+
+```powershell
+ssh root@192.168.1.50
+```
+Au premier accès : répondre `yes`.
+
+### Si le ssh à cette adresse est déjà connu et empêche la connexion
+
+Il faut supprimer la clé SSH associée à cette adresse IP dans l'ordinateur :
+
+#### Sous Windows (PowerShell)
+
+```powershell
+ssh-keygen -R 192.168.1.50
+```
+#### Sous WSL
+
+```bash
+ssh-keygen -f '/root/.ssh/known_hosts' -R '192.168.1.50'
+```
+
+Puis on peut retenter la connexion ssh à nouveau.
+
+### Cas d’incompatibilité de clés SSH
 
 Si l’image n’accepte que `ssh-rsa`, utilise :
 

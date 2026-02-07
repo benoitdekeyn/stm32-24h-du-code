@@ -9,6 +9,12 @@ Objectif : passer le layout en `fr`.
 - Accès shell sur la STM32 (local ou SSH).
 - Weston en cours d’exécution (ou activable via systemd selon l’image).
 
+Passer en mode super utilisateur (root) si nécessaire :
+
+```sh
+su root
+```
+
 ## Étapes
 
 ### 1) Ouvrir la config Weston
