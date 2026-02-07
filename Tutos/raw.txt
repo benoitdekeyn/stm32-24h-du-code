@@ -1,0 +1,184 @@
+Ressources
+
+Cours Machine Learning OpenClassroom :
+https://openclassrooms.com/fr/courses/8063076-initiez-vous-au-machine-learning
+
+Cours de l’Université Aix Marseille pour apprendre à utiliser la STM32MP1 : 
+L’Internet des Objets — STM32MP1
+
+comment installer Cube IDE sur la carte et l’utiliser pour executer un programme sur la carte
+
+
+
+Opérations  Command-line
+Raccourcis terminal pour WSL
+> nano ~/.bashrc
+
+Copier coller à la fin du fichier : 
+
+# se placer dans un dossier au lancement de wsl
+cd "/mnt/c/Users/benoi/Documents/GitHub/stm32-24h-du-code"
+
+# activer le SDK STM32
+source ~/Developer-Package/SDK/Installation_Finale/environment-setup-cortexa7t2hf-n>
+
+#SSH STM32
+alias ssh-stm='ssh -o HostKeyAlgorithms=+ssh-rsa -o PubkeyAcceptedKeyTypes=+ssh-rsa'
+alias scp-stm='scp -o HostKeyAlgorithms=+ssh-rsa -o PubkeyAcceptedKeyTypes=+ssh-rsa'
+Changer clavier qwerty en azerty
+Attention le clavier est en qwerty : 
+‘w’ = ‘z’
+> vi /etc/xdg/weston/weston.ini
+
+Défiler avec les flèches jusqu’à atteindre le texte ci-dessous (‘us’ en vert) dans le fichier.
+[keyboard]
+keymap_layout=us
+Appuyer sur la touche ‘i’ pour pouvoir éditer le contenu et remplacer ‘us’ par ‘fr’.
+Appuyer sur ‘echap’ pour arrêter l’édition.
+Appuyer sur Maj+M puis sur X.
+
+Attention le clavier est toujours en qwerty : 
+‘m’ = ‘,’
+‘w’ = ‘z’
+‘a’ = ‘q’
+Pour appliquer les changements :
+> systemctl restart weston
+Connexion SSH à la STM32 sur un PC Windows 
+Connecter avec un câble RJ45 la carte STM32 et le PC.
+
+Sur la carte STM32 (pour définir une ip statique sur l’interface ethernet)
+> ifconfig eth0 192.168.1.50 netmask 255.255.255.0 up
+
+TIP : Pour ne pas avoir à retaper cette commande à chaque démarrage, on peut éditer les fichiers de configuration du réseau avec vi : 
+> vi /etc/systemd/network/10-static-eth0.network
+
+Y écrire le texte suivant :
+[Match] 
+Name=eth0 
+
+[Network] 
+Address=192.168.1.50/24
+
+Quitter l’éditeur vi en sauvegardant en appuyant sur ECHAP puis en tapant la commande : 
+> :x
+
+OU en 1 ligne de commande : 
+> printf "[Match]\nName=eth0\n[Network]\nAddress=192.168.1.50/24\n" > /etc/systemd/network/10-static-eth0.network
+
+Sur windows dans PowerShell
+> Get-NetAdapter
+Repérer le nom de l’interface (ex : Ethernet 4)
+Enregistrer le réseau local statique correspondant :
+> netsh.exe interface ip set address "Ethernet 4" static 192.168.1.10 255.255.255.0
+
+Sur Windows (Vérifier la connexion à la carte) 
+>  ping 192.168.1.50
+
+Connexion ssh depuis le Powershell ou WSL
+> ssh -o HostKeyAlgorithms=+ssh-rsa -o PubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.1.50
+> yes
+
+Connexion scp depuis le Powershell ou WSL
+> scp-stm fichier.txt root@192.168.1.50:/chemin_destination
+> yes
+
+TIPS : si vous avez ajouté le raccourci à WSL, il suffit d’écrire 
+> ssh-stm root@192.168.1.50
+
+Pour revenir en DHCP sur le port ethernet (accès à internet normal) : 
+netsh.exe interface ip set address "Ethernet 4" dhcp
+
+Sauvegarder et restaurer une Carte SD via un fichier image sur Windows
+Créer un fichier .img à partir d’une carte SD
+Pour identifier le numéro de disque attribuée à la carte SD, aller dans Powershell et entrer : 
+> diskpart
+Attendre quelques secondes le temps que Diskpart démarre puis entrer :
+> list disk
+Retenez le numéro associé au disque dont la taille correspond à celle de la carte SD (ici on suppose que c’est le disk 1 qui correspond à une carte de 16Go.
+
+> exit
+
+Télécharger le programme dd pour windows ici : 
+http://www.chrysocome.net/downloads/dd-0.5.zip
+Dézipper l’archive, et copier-coller l’exécutable “dd.exe” à l’emplacement : 
+C:\Windows\System32
+Puis pour créer le fichier image, il faut lancer cette commande en adaptant les textes en bleu
+> dd if=\\.\PhysicalDrive1 of=C:\Users\...\Backup\backup.img bs=1M --progress
+Un compteur décompte le nombre de bits générés jusqu’à atteindre la valeur de la capacité de la carte SD en bits. (16 000 000 000 dans notre cas). 
+Vous pouvez ignorer l’erreur suivante en fin de copie :
+
+
+Il vaut ensuite mieux compresser le fichier dont la taille vaut celle de la carte SD vers un fichier .zip qui peut être 100x plus léger.
+Restaurer une carte SD à partir d’un fichier .img 
+Télécharger gratuitement le logiciel BalenaEtcher pour Windows : https://etcher.balena.io/#download-etcher
+
+Après installation et ouverture du logiciel : 
+Sélectionner le fichier .img (décompressé bien-sûr)
+Sélectionner la carte SD
+Lancer le flash
+
+Installer l’OS dans la STM32 sur Windows
+Télécharger le “starter package” : un .tar.gz d’1,2 Go) qui contient l’OS déjà compilé de STMicroelectronics dérivé de Yocto avec des applications de base :
+https://www.st.com/en/embedded-software/stm32mp1starter.html
+Se placer dans WSL à la racine ou se trouve le fichier .tar.gz et dézipper l’archive 
+(Adapter le nom du fichier en bleu, et la décompression peut prendre quelques minutes) :
+> tar -xf FLASH-stm32mp1-openstlinux-6.6-yocto-scarthgap-mpu-v25.06.11.tar.gz
+
+Une fois dézippé, se placer dans ce sous-dossier : 
+> cd stm32mp1-openstlinux-6.6-yocto-scarthgap-mpu-v25.06.11/images/stm32mp1
+
+Puis chercher le fichier .tsv qui correspond à la carte : 
+> find . -name "*stm32mp157c-dk2-optee.tsv"
+Ce qui a retourné ceci :
+./flashlayout_st-image-weston/optee/FlashLayout_sdcard_stm32mp157c-dk2-optee.tsv
+Il faut donc exécuter cette commande pour créer l’image de l’OS à flasher sur la carte SD : 
+> ./scripts/create_sdcard_from_flashlayout.sh ./flashlayout_st-image-weston/optee/FlashLayout_sdcard_stm32mp157c-dk2-optee.tsv
+
+Après quelques minutes, 
+On peut trouver le fichier .raw de quelques GigaOctets avec cette commande : 
+> find . -name "*.raw"
+Ce qui m’a retourné :
+./FlashLayout_sdcard_stm32mp157c-dk2-optee.raw
+Le fichier image est donc bien dans le dossier courant.
+Renommer son extension en .img est optionnel mais explicite sa nature : 
+> mv ./FlashLayout_sdcard_stm32mp157c-dk2-optee.raw ./FlashLayout_sdcard_stm32mp157c-dk2-optee.img
+
+Dans windows, revenir chercher où se trouve ce fichier dont le chemin relatif est le suivant : stm32mp1-openstlinux-6.6-yocto-scarthgap-mpu-v25.06.11/images/stm32mp1//FlashLayout_sdcard_stm32mp157c-dk2-optee.img
+
+Télécharger gratuitement le logiciel BalenaEtcher pour Windows : https://etcher.balena.io/#download-etcher
+
+Après installation et ouverture du logiciel : 
+Sélectionner le fichier .img 
+Sélectionner la carte SD branchée sur le PC Windows
+Lancer le flash
+
+La carte SD peut maintenant être utilisée sur la STM32.
+
+Créer un programme en C pour la STM32
+Télécharger l’archive du SDK adapté à l’architecture sur laquelle la compilation sera effectuée pour la STM32. Ici Windows, donc sélectionner la dernière version pour ‘x86’ ici :
+https://www.st.com/en/embedded-software/stm32mp1dev.html#get-software
+
+Aller dans WSL et se placer dans le même répertoire que l’archive
+Créer le dossier d’installation à la racine : 
+> mkdir -p ~/Developer-Package/SDK
+Décompresser l’installateur dans ce dossier : 
+> xvf SDK-x86_64-stm32mp1-openstlinux-6.6-yocto-scarthgap-mpu-v25.06.11.tar.gz -C ~/Developer-Package/SDK
+Se placer dans le dossier contenant l’installateur
+> cd ~/Developer-Package/SDK/stm32mp1-openstlinux-*/sdk
+Exécuter l’installateur : 
+> ./st-image-weston-openstlinux-*.sh -d ~/Developer-Package/SDK/Installation_Finale
+
+Avant chaque compilation il faudra entrer la commande suivante : 
+> source ~/Developer-Package/SDK/Installation_Finale/environment-setup-cortexa7t2hf-neon-vfpv4-ostl-linux-gnueabi
+Alors autant la mettre directement à la fin du fichier ~/.bashrc via nano : 
+> echo -e "\nsource ~/Developer-Package/SDK/Installation_Finale/environment-setup-cortexa7t2hf-neon-vfpv4-ostl-linux-gnueabi\n" >> ~/.bashrc
+
+Maintenant il suffit d’utiliser cette commande pour compiler un fichier C executable sur la STM32 qui a une architecture ARM :
+> $CC hello.c -o hello_arm
+
+
+
+
+
+
+
