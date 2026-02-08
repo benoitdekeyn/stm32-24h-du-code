@@ -5,36 +5,43 @@ Objectif :
 - Charger l’environnement de cross-compilation.
 - Compiler un binaire ARM exécutable sur la STM32.
 
-## Pré-requis
+## Environnement :
 
 - WSL (Ubuntu ou équivalent).
 - Archive du SDK ST correspondant à l’architecture de la machine de build (ici : PC x86_64).
 
-Téléchargement SDK :
-- https://www.st.com/en/embedded-software/stm32mp1dev.html#get-software
+## 1) Obtenir le SDK
 
-## 1) Préparer le dossier d’installation
+Au choix :   
+
+- Télécharger l’archive du SDK depuis le site de STMicroelectronics
+https://www.st.com/en/embedded-software/stm32mp1dev.html#get-so
+
+- Version 25.06.11 déjà téléchargée  
+[SDK-x86_64-stm32mp1-openstlinux-6.6-yocto-scarthgap-mpu-v25.06.11.tar.gz](../Ressources/SDK-x86_64-stm32mp1-openstlinux-6.6-yocto-scarthgap-mpu-v25.06.11.tar.gz)
+
+## 2) Créer le dossier d’installation
 
 ```bash
 mkdir -p ~/Developer-Package/SDK
 ```
 
-## 2) Décompresser l’archive du SDK
+## 3) Décompresser l’archive du SDK
 
-Adapte le nom exact du fichier :
+Adapter le nom exact en fonction du fichier téléchargé
 
 ```bash
 tar -xf SDK-x86_64-stm32mp1-openstlinux-6.6-yocto-scarthgap-mpu-v25.06.11.tar.gz -C ~/Developer-Package/SDK
 ```
 
-## 3) Lancer l’installateur
+## 4) Lancer l’installateur
 
 ```bash
 cd ~/Developer-Package/SDK/stm32mp1-openstlinux-*/sdk
 ./st-image-weston-openstlinux-*.sh -d ~/Developer-Package/SDK/Installation_Finale
 ```
 
-## 4) Charger l’environnement de cross-compilation
+## 5) Charger l’environnement de cross-compilation
 
 À faire avant chaque compilation :
 
@@ -42,15 +49,17 @@ cd ~/Developer-Package/SDK/stm32mp1-openstlinux-*/sdk
 source ~/Developer-Package/SDK/Installation_Finale/environment-setup-cortexa7t2hf-neon-vfpv4-ostl-linux-gnueabi
 ```
 
-### Option : le faire automatiquement à l’ouverture de WSL
+### Conseil pratique : le faire automatiquement à l’ouverture de WSL
 
-Ajoute à la fin de `~/.bashrc` :
+Aller voir le tuto sur la configuration de raccourcis dans WSL pour éviter de retaper cette commande à chaque fois : [Tuto 1 - Raccourcis WSL](./01-wsl-raccourcis.md) ou simplement exécuter cette commande :
 
 ```bash
 echo -e "\nsource ~/Developer-Package/SDK/Installation_Finale/environment-setup-cortexa7t2hf-neon-vfpv4-ostl-linux-gnueabi\n" >> ~/.bashrc
 ```
 
 ## 5) Compiler un fichier C (exemple)
+
+la variable d’environnement `$CC` est automatiquement définie par le script d’installation du SDK pour utiliser le bon compilateur de cross-compilation (ex : `arm-linux-gnueabi-gcc`).
 
 Depuis le repo (ex : `Code/hello.c`) :
 
@@ -60,23 +69,4 @@ $CC Code/hello.c -o Code/hello_arm
 
 ## 6) Exécuter sur la STM32
 
-Copier le binaire (exemple en SSH sur `192.168.1.50`) :
-
-```bash
-scp-stm Code/hello_arm root@192.168.1.50:/root/
-```
-
-Puis sur la STM32 :
-
-```sh
-chmod +x /root/hello_arm
-/root/hello_arm
-```
-
-## Vérification
-
-Sur WSL, le binaire doit être ARM (et pas x86_64) :
-
-```bash
-file Code/hello_arm
-```
+Aller voir le tuto sur l’exécution de programmes C sur la STM32 : [Tuto 7 - Exécuter un programme C](./07-executer-prog-C.md)

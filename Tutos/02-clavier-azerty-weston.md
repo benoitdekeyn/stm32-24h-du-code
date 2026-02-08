@@ -2,18 +2,26 @@
 
 Sur certaines images ST, l’interface graphique (Weston) démarre avec un clavier en QWERTY.
 
-Objectif : passer le layout en `fr`.
+Objectif : passer le layout en AZERTY pour correspondre à un clavier français.
 
-## Pré-requis
+## Environnement
 
-- Accès shell sur la STM32 (local ou SSH).
-- Weston en cours d’exécution (ou activable via systemd selon l’image).
-
-Passer en mode super utilisateur (root) si nécessaire :
-
+Shell sur la STM32 (via SSH ou terminal local) avec les droits root (super utilisateur).
+Passer en mode super utilisateur (root) si nécessaire avec la commande suivante :
 ```sh
 su root
 ```
+
+## Attention (Correspondance QWERTY pendant l’édition)
+
+Tant que Weston n'a pas redémarré, le clavier reste en QWERTY.
+tableau de correpsondance :
+| Dans l'OS en QWERTY | Sur le clavier AZERTY |
+|--------|---------|
+| `w`    | `z`     |
+| `a`    | `q`     |
+| `m`    | `,`     |
+| `:`    | MAJ + M |
 
 ## Étapes
 
@@ -25,24 +33,26 @@ vi /etc/xdg/weston/weston.ini
 
 ### 2) Modifier la section clavier
 
-Dans le fichier, repère :
+Dans le fichier, repèrer :
 
 ```ini
 [keyboard]
 keymap_layout=us
 ```
 
-Remplace `us` par `fr` :
+Remplacer `us` par `fr` :
 
 ```ini
 [keyboard]
 keymap_layout=fr
 ```
+Rappel `vi` :
+- `i` : insérer/éditer
+- `r` : remplacer un caractère
 
 ### 3) Sauvegarder et quitter `vi`
 
 Rappel `vi` :
-- `i` : insérer/éditer
 - `Échap` : sortir du mode édition
 - `:x` : sauver + quitter
 
@@ -51,13 +61,3 @@ Rappel `vi` :
 ```sh
 systemctl restart weston
 ```
-
-## Attention (piège QWERTY pendant l’édition)
-
-Tant que tu n’as pas redémarré Weston, le clavier reste en QWERTY.
-Exemples fréquents :
-- `w` ↔ `z`
-- `a` ↔ `q`
-- `m` ↔ `,`
-
-Si tu galères avec `vi`, fais-le depuis une connexion SSH (où le mapping clavier dépend plutôt de ton PC).

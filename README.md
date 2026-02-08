@@ -1,58 +1,64 @@
 # STM32 — 24h du code (STM32MP1)
 
-Repo de travail et tutoriels « pas-à-pas » pour prendre en main une carte **STM32MP157C-DK2** sous **Windows + WSL** : réseau, SSH, flash d’OS sur carte SD, et cross-compilation C via le SDK ST.
+Découverte et prise en main de la carte **STM32MP157C-DK2** sous **Windows 11 + WSL 2 (Ubuntu 24.04)**
 
-## Matériel / cible
+## Tutoriels locaux
 
-- Carte : **STM32MP157C-DK2** (Discovery Kit)
-- Image / layout : **OP-TEE** (voir le nom des fichiers `*optee*` dans les ressources)
+- [Installer l’OS officiel (Starter Package) sur carte SD](05-installer-os-starter-package.md)
+- [Compiler un programme C pour STM32MP1 via le SDK](06-compiler-c-sdk.md)
+- [Exécuter un programme C sur la STM32P1](07-executer-prog-C.md)
+- [Configurer les raccourcis dans WSL (bashrc)](01-wsl-raccourcis.md)
+- [Passer le clavier de QWERTY à AZERTY (Weston)](02-clavier-azerty-weston.md)
+- [Connexion Ethernet + SSH entre Windows et STM32MP1](03-ssh-windows-stm32.md)
+- [Sauvegarder / restaurer une carte SD sous Windows (image .img)](04-sd-backup-restore-windows.md)
 
-## Démarrage rapide
+## Tutoriels externes
 
-1. Lire le point d’entrée des tutos : [Tutos/README.md](Tutos/README.md)
-2. Flasher l’OS sur carte SD : [Tutos/05-installer-os-starter-package.md](Tutos/05-installer-os-starter-package.md)
-3. Mettre le lien Ethernet + SSH : [Tutos/03-ssh-windows-stm32.md](Tutos/03-ssh-windows-stm32.md)
-4. Compiler et exécuter un binaire ARM : [Tutos/06-compiler-c-sdk.md](Tutos/06-compiler-c-sdk.md)
+Cours OpenClassroom « Initiez-vous au machine learning »
+https://openclassrooms.com/fr/courses/8063076-initiez-vous-au-machine-learning
 
-## Tutoriels
+Cours de l’Université Aix Marseille pour apprendre à utiliser la STM32MP1 : 
+https://arnaud-fevrier.pedaweb.univ-amu.fr/IoT/STM32MP1.html
 
-- Index : [Tutos/README.md](Tutos/README.md)
-- WSL (raccourcis + alias) : [Tutos/01-wsl-raccourcis.md](Tutos/01-wsl-raccourcis.md)
-- Clavier AZERTY sous Weston : [Tutos/02-clavier-azerty-weston.md](Tutos/02-clavier-azerty-weston.md)
-- Windows ↔ STM32 (Ethernet + SSH/SCP) : [Tutos/03-ssh-windows-stm32.md](Tutos/03-ssh-windows-stm32.md)
-- Backup / restore carte SD : [Tutos/04-sd-backup-restore-windows.md](Tutos/04-sd-backup-restore-windows.md)
-- Installer l’OS ST (Starter Package) : [Tutos/05-installer-os-starter-package.md](Tutos/05-installer-os-starter-package.md)
-- Compiler en C via le SDK : [Tutos/06-compiler-c-sdk.md](Tutos/06-compiler-c-sdk.md)
+## Ressources locales
 
-## Ressources locales (dans ce repo)
+### Manuels et datasheets
 
-### Images / fichiers ST (OpenSTLinux)
+- Manuel utilisateur [User-Manual-STM32MP157C-DK2.pdf](Ressources/User-Manual-STM32MP157C-DK2.pdf)
 
-Le starter package décompressé est présent ici :
-- [Ressources/stm32mp1-openstlinux-6.6-yocto-scarthgap-mpu-v25.06.11/images/stm32mp1](Ressources/stm32mp1-openstlinux-6.6-yocto-scarthgap-mpu-v25.06.11/images/stm32mp1)
+### Fichiers de STMicroelectronics déjà téléchargés
 
-Fichiers utiles (déjà prêts) :
-- Image SD (DK2, OP-TEE) :
-	- [Ressources/stm32mp1-openstlinux-6.6-yocto-scarthgap-mpu-v25.06.11/images/stm32mp1/FlashLayout_sdcard_stm32mp157c-dk2-optee.img](Ressources/stm32mp1-openstlinux-6.6-yocto-scarthgap-mpu-v25.06.11/images/stm32mp1/FlashLayout_sdcard_stm32mp157c-dk2-optee.img)
-- Notes ST (update / flash layout) :
-	- [Ressources/stm32mp1-openstlinux-6.6-yocto-scarthgap-mpu-v25.06.11/images/stm32mp1/FlashLayout_sdcard_stm32mp157c-dk2-optee.how_to_update.txt](Ressources/stm32mp1-openstlinux-6.6-yocto-scarthgap-mpu-v25.06.11/images/stm32mp1/FlashLayout_sdcard_stm32mp157c-dk2-optee.how_to_update.txt)
+- L'OS officiel (Starter Package) de STMicroelectronics pour la STM32MP1  
+[FLASH-stm32mp1-openstlinux-6.6-yocto-scarthgap-mpu-v25.06.11.tar.gz](Ressources/FLASH-stm32mp1-openstlinux-6.6-yocto-scarthgap-mpu-v25.06.11.tar.gz)
 
-### Code d’exemple
+- Le SDK (Software Development Kit) pour cross-compilation des programmes en C  
+[STM32MP1_Developer_Package_v2.0.0.tar.gz](Ressources/STM32MP1_Developer_Package_v2.0.0.tar.gz)
 
-- Exemple C : [Code/hello.c](Code/hello.c)
-- Exemple binaire compilé (si présent) : [Code/hello_arm](Code/hello_arm)
+### Images de cartes SD prêtes à être flashées
+- OS officiel (Starter Package)  
+[FlashLayout_sdcard_stm32mp157c-dk2-optee.img](Ressources/Backup_FlashLayout_sdcard_stm32mp157c-dk2-optee.img) 
 
-### Sauvegardes
+- Sauvegarde de la carte SD à la reception de la carte  
+[backup_original_07-02-2026_OS_STM.zip](Ressources/Backup/backup_original_07-02-2026_OS_STM.zip)
 
-- Dossier prévu pour les images de cartes SD : [Backup](Backup)
+- Sauvegarde du dernier état de la carte sur l'OS orginal (en français, SSH automatique)  
+[Backup\backup_config_IP_enFR_07-02-2026_OS_STM.zip](Ressources/Backup/backup_config_IP_enFR_07-02-2026_OS_STM.zip)
 
-## Ressources externes
+## Liens externes
 
-- Starter Package STM32MP1 (OS ST) : https://www.st.com/en/embedded-software/stm32mp1starter.html
-- Developer Package / SDK STM32MP1 : https://www.st.com/en/embedded-software/stm32mp1dev.html#get-software
-- BalenaEtcher (flash SD sous Windows) : https://etcher.balena.io/#download-etcher
-- `dd` pour Windows (si tu préfères une image `.img` en ligne de commande) : http://www.chrysocome.net/downloads/dd-0.5.zip
+### STM32MP1 
+*Compte STMicroelectronics requis pour le téléchargement*
 
-## Notes
+- Starter Package STM32MP1 (OS ST)  
+https://www.st.com/en/embedded-software/stm32mp1starter.html
 
-- Les commandes SSH des tutos ajoutent parfois des options `ssh-rsa` pour compatibilité. Si ton environnement SSH est plus récent, tu peux essayer sans.
+- Developer Package / SDK STM32MP1  
+https://www.st.com/en/embedded-software/stm32mp1dev.html#get-software
+
+### Outils pour flash de cartes SD sous Windows
+
+- BalenaEtcher (flash SD sous Windows)  
+https://etcher.balena.io/#download-etcher
+
+- `dd` pour Windows  
+http://www.chrysocome.net/downloads/dd-0.5.zip
