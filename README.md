@@ -32,7 +32,7 @@ https://arnaud-fevrier.pedaweb.univ-amu.fr/IoT/STM32MP1.html
 [FLASH-stm32mp1-openstlinux-6.6-yocto-scarthgap-mpu-v25.06.11.tar.gz](Ressources/FLASH-stm32mp1-openstlinux-6.6-yocto-scarthgap-mpu-v25.06.11.tar.gz)
 
 - Le SDK (Software Development Kit) pour cross-compilation des programmes en C  
-[STM32MP1_Developer_Package_v2.0.0.tar.gz](Ressources/STM32MP1_Developer_Package_v2.0.0.tar.gz)
+[SDK-x86_64-stm32mp1-openstlinux-6.6-yocto-scarthgap-mpu-v25.06.11.tar.gz](Ressources/SDK-x86_64-stm32mp1-openstlinux-6.6-yocto-scarthgap-mpu-v25.06.11.tar.gz)
 
 ### Images de cartes SD prêtes à être flashées
 - OS officiel (Starter Package)  

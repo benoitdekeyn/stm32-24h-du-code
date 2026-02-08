@@ -2,7 +2,7 @@
 
 ## Version Plug and Play :
 - Télécharger l’image SD de la version 6.6 déjà générée  
-[FLASH-stm32mp1-openstlinux-6.6-yocto-scarthgap-mpu-v25.06.11.img.zip](../Backup/FLASH-stm32mp1-openstlinux-6.6-yocto-scarthgap-mpu-v25.06.11.img.zip)
+[FLASH-stm32mp1-openstlinux-6.6-yocto-scarthgap-mpu-v25.06.11.img.zip](../Backup/FlashLayout_sdcard_stm32mp157c-dk2-optee.img.zip)
 - Flasher la carte SD avec cette image (étape 7 du tuto).
 
 Autrement, suivre les étapes ci-dessous pour générer l’image SD soi-même à partir d'une nouvelle version du Starter Package de ST.
