@@ -36,13 +36,13 @@ https://arnaud-fevrier.pedaweb.univ-amu.fr/IoT/STM32MP1.html
 
 ### Images de cartes SD prêtes à être flashées
 - OS officiel (Starter Package)  
-[FlashLayout_sdcard_stm32mp157c-dk2-optee.img](Ressources/Backup_FlashLayout_sdcard_stm32mp157c-dk2-optee.img) 
+[FlashLayout_sdcard_stm32mp157c-dk2-optee.img.zip](Backup/FlashLayout_sdcard_stm32mp157c-dk2-optee.img.zip) 
 
 - Sauvegarde de la carte SD à la reception de la carte  
-[backup_original_07-02-2026_OS_STM.zip](Ressources/Backup/backup_original_07-02-2026_OS_STM.zip)
+[backup_original_07-02-2026_OS_STM.img.zip](Backup/backup_original_07-02-2026_OS_STM.img.zip)
 
 - Sauvegarde du dernier état de la carte sur l'OS orginal (en français, SSH automatique)  
-[Backup\backup_config_IP_enFR_07-02-2026_OS_STM.zip](Ressources/Backup/backup_config_IP_enFR_07-02-2026_OS_STM.zip)
+[Backup\backup_config_IP_enFR_07-02-2026_OS_STM.img.zip](Backup/backup_config_IP_enFR_07-02-2026_OS_STM.img.zip)
 
 ## Liens externes
 
