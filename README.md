@@ -4,13 +4,13 @@ Découverte et prise en main de la carte **STM32MP157C-DK2** sous **Windows 11 +
 
 ## Tutoriels locaux
 
-- [Installer l’OS officiel (Starter Package) sur carte SD](05-installer-os-starter-package.md)
-- [Compiler un programme C pour STM32MP1 via le SDK](06-compiler-c-sdk.md)
-- [Exécuter un programme C sur la STM32P1](07-executer-prog-C.md)
-- [Configurer les raccourcis dans WSL (bashrc)](01-wsl-raccourcis.md)
-- [Passer le clavier de QWERTY à AZERTY (Weston)](02-clavier-azerty-weston.md)
-- [Connexion Ethernet + SSH entre Windows et STM32MP1](03-ssh-windows-stm32.md)
-- [Sauvegarder / restaurer une carte SD sous Windows (image .img)](04-sd-backup-restore-windows.md)
+- [Installer l’OS officiel (Starter Package) sur carte SD](Tutos/05-installer-os-starter-package.md)
+- [Compiler un programme C pour STM32MP1 via le SDK](Tutos/06-compiler-c-sdk.md)
+- [Exécuter un programme C sur la STM32P1](Tutos/07-executer-prog-C.md)
+- [Configurer les raccourcis dans WSL (bashrc)](Tutos/01-wsl-raccourcis.md)
+- [Passer le clavier de QWERTY à AZERTY (Weston)](Tutos/02-clavier-azerty-weston.md)
+- [Connexion Ethernet + SSH entre Windows et STM32MP1](Tutos/03-ssh-windows-stm32.md)
+- [Sauvegarder / restaurer une carte SD sous Windows (image .img)](Tutos/04-sd-backup-restore-windows.md)
 
 ## Tutoriels externes
 
