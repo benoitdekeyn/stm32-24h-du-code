@@ -22,9 +22,13 @@ https://arnaud-fevrier.pedaweb.univ-amu.fr/IoT/STM32MP1.html
 
 ## Ressources locales
 
-### Manuels et datasheets
+### Manuels
 
-- Manuel utilisateur [User-Manual-STM32MP157C-DK2.pdf](Ressources/User-Manual-STM32MP157C-DK2.pdf)
+- Manuel utilisateur   
+[User-Manual-STM32MP157C-DK2.pdf](Ressources/User-Manual-STM32MP157C-DK2.pdf)
+
+- Mail de T. Grandpierre pour la configuration de la carte   
+[Mail T. Grandpierre](Ressources\Mail-tutoriel-Thierry-Grandpierre.pdf)
 
 ### Fichiers de STMicroelectronics déjà téléchargés
 
