@@ -7,6 +7,20 @@ Objectif :
 - Se connecter en SSH.
 - Copier des fichiers avec SCP.
 
+## Version déjà configurée
+
+Si la carte STM32MP1 est déjà configurée pour avoir une IP statique (ex : 192.168.1.50),
+il suffit de suivre les étapes suivantes pour se connecter à la carte :
+
+-  1. Alimenter la carte STM32MP1 via son port USB-C côté carte SD / Prise RJ45.
+-  2. Brancher un câble RJ45 entre la carte STM32MP1 et le PC Windows.
+-  3. Télécharger et exécuter en tant qu’administrateur l'executable suivant : [connectSTM.exe](Code\direct_link_setup\connectSTM.exe)
+-  4. Dans le programme, la connexion est guidée, et se termine par un ping pour vérifier le lien.
+
+Passer directement à l’étape ci-dessous numéro :
+4) pour se connecter en SSH à la carte STM32MP1.
+5) pour copier des fichiers avec SCP.
+
 ## Environnement :
 - Shell de la STM32MP1 (avec une image Unix/Linux).
 - Powershell du PC Windows 10/11.
@@ -64,6 +78,12 @@ printf "[Match]\nName=eth0\n\n[Network]\nAddress=192.168.1.50/24\n" > /etc/syste
 ```
 
 ## 2) Côté Windows : IP statique sur l’interface Ethernet
+
+### Version simplifiée : 
+
+il est possible de passer les étapes 2) et 3) en utilisant directement un programme automatique : 
+-  Télécharger et exécuter en tant qu’administrateur l'executable suivant : [connectSTM.exe](Code\direct_link_setup\connectSTM.exe)
+-  Dans le programme, la connexion est guidée, et se termine par un ping pour vérifier le lien.
 
 ### Identifier le nom de l’interface
 
