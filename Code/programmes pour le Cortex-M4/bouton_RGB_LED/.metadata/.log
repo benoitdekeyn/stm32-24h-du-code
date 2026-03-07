@@ -1,0 +1,21 @@
+!SESSION 2026-03-07 10:54:12.875 -----------------------------------------------
+eclipse.buildId=Version 2.1.0
+java.version=21.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-03-07 10:54:34.723
+!MESSAGE Log4j2 initialized with config file /mnt/c/Users/benoi/Documents/GitHub/stm32-24h-du-code/Code/bouton_RGB_LED/.metadata/.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-03-07 10:54:36.722
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-03-07 10:55:51.175
+!MESSAGE Indexed 'Bouton_RGB_CM4' (41 sources, 142 headers) in 16.7 sec: 9,128 declarations; 39,614 references; 0 unresolved inclusions; 42 syntax errors; 42 unresolved names (0.086%)
+
+!ENTRY com.st.stm32cube.ide.mpu.debug 1 1 2026-03-07 11:04:44.145
+!MESSAGE script_load: (  cd /usr/local/projects/Bouton_RGB_CM4;   if [ -f fw_cortex_m4.sh ]; then     /bin/chmod +x fw_cortex_m4.sh;    ./fw_cortex_m4.sh start;  else     cd lib/firmware;    FW_NAME=Bouton_RGB_CM4.elf;     /bin/echo "Starting firmware $FW_NAME";     if [ -f /lib/firmware/"$FW_NAME" ]; then       /bin/rm -f /lib/firmware/$FW_NAME;       if [ "$?" -ne 0 ]; then         exit 1;      fi;    fi;    /bin/ln -s $PWD/$FW_NAME /lib/firmware/$FW_NAME;     if [ "$?" -ne 0 ]; then       exit 1;    fi;    /bin/echo -n $FW_NAME > /sys/class/remoteproc/remoteproc0/firmware;     /bin/echo -n start > /sys/class/remoteproc/remoteproc0/state;   fi;)
+
+!ENTRY com.st.stm32cube.ide.mpu.debug 1 1 2026-03-07 11:04:44.150
+!MESSAGE script_unload: (  STATE=$(/bin/cat /sys/class/remoteproc/remoteproc0/state);   /bin/echo "remoteproc state is $STATE";   if [ "$STATE" == "running" ]; then     REMOTE_FIRMWARE=$(/bin/cat /sys/class/remoteproc/remoteproc0/firmware);     /bin/echo "loaded firmare is $REMOTE_FIRMWARE";     if [ -f /usr/local/examples/$REMOTE_FIRMWARE/fw_cortex_m4.sh ]; then       cd /usr/local/examples/$REMOTE_FIRMWARE/; ./fw_cortex_m4.sh stop;     elif [ -f /usr/local/projects/$REMOTE_FIRMWARE/fw_cortex_m4.sh ]; then       cd /usr/local/projects/$REMOTE_FIRMWARE/;      ./fw_cortex_m4.sh stop;     else       /bin/echo -n stop > /sys/class/remoteproc/remoteproc0/state;     fi;  fi; )

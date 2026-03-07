@@ -1,0 +1,9 @@
+/mnt/c/Users/benoi/Documents/GitHub/stm32-24h-du-code/Code/bouton_RGB_LED/Bouton_RGB/Drivers/STM32MP1xx_HAL_Driver/Src/stm32mp1xx_hal_gpio.c:168:6:HAL_GPIO_Init	26
+/mnt/c/Users/benoi/Documents/GitHub/stm32-24h-du-code/Code/bouton_RGB_LED/Bouton_RGB/Drivers/STM32MP1xx_HAL_Driver/Src/stm32mp1xx_hal_gpio.c:297:6:HAL_GPIO_DeInit	16
+/mnt/c/Users/benoi/Documents/GitHub/stm32-24h-du-code/Code/bouton_RGB_LED/Bouton_RGB/Drivers/STM32MP1xx_HAL_Driver/Src/stm32mp1xx_hal_gpio.c:384:15:HAL_GPIO_ReadPin	2
+/mnt/c/Users/benoi/Documents/GitHub/stm32-24h-du-code/Code/bouton_RGB_LED/Bouton_RGB/Drivers/STM32MP1xx_HAL_Driver/Src/stm32mp1xx_hal_gpio.c:418:6:HAL_GPIO_WritePin	2
+/mnt/c/Users/benoi/Documents/GitHub/stm32-24h-du-code/Code/bouton_RGB_LED/Bouton_RGB/Drivers/STM32MP1xx_HAL_Driver/Src/stm32mp1xx_hal_gpio.c:440:6:HAL_GPIO_TogglePin	2
+/mnt/c/Users/benoi/Documents/GitHub/stm32-24h-du-code/Code/bouton_RGB_LED/Bouton_RGB/Drivers/STM32MP1xx_HAL_Driver/Src/stm32mp1xx_hal_gpio.c:466:19:HAL_GPIO_LockPin	2
+/mnt/c/Users/benoi/Documents/GitHub/stm32-24h-du-code/Code/bouton_RGB_LED/Bouton_RGB/Drivers/STM32MP1xx_HAL_Driver/Src/stm32mp1xx_hal_gpio.c:501:6:HAL_GPIO_EXTI_IRQHandler	1
+/mnt/c/Users/benoi/Documents/GitHub/stm32-24h-du-code/Code/bouton_RGB_LED/Bouton_RGB/Drivers/STM32MP1xx_HAL_Driver/Src/stm32mp1xx_hal_gpio.c:527:13:HAL_GPIO_EXTI_Rising_Callback	1
+/mnt/c/Users/benoi/Documents/GitHub/stm32-24h-du-code/Code/bouton_RGB_LED/Bouton_RGB/Drivers/STM32MP1xx_HAL_Driver/Src/stm32mp1xx_hal_gpio.c:542:13:HAL_GPIO_EXTI_Falling_Callback	1
