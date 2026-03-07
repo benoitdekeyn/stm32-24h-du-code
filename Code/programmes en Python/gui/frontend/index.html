@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT LED Control</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>IoT LED Controller</h1>
+        <div class="card">
+            <button id="toggleBtn" class="toggle-button">
+                <span class="button-text">Toggle LED</span>
+            </button>
+            <div id="statusDisplay" class="status-display">
+                <p class="status-label">LED Status:</p>
+                <p id="statusText" class="status-text">Unknown</p>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+</body>
+</html>

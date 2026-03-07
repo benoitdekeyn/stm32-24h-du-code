@@ -4,3 +4,8 @@ Fichiers images décompressés
 Dossiers d'OS décompressés
 */*stm32mp1-openstlinux*/
 */*stm32mp1-openstlinux*.tar
+
+Paquets NPM
+*node_modules/
+*dist/
+
