@@ -11,6 +11,7 @@ Découverte et prise en main de la carte **STM32MP157C-DK2** sous **Windows 11 +
 - [Passer le clavier de QWERTY à AZERTY (Weston)](Tutos/02-clavier-azerty-weston.md)
 - [Connexion Ethernet + SSH entre Windows et STM32MP1](Tutos/03-ssh-windows-stm32.md)
 - [Sauvegarder / restaurer une carte SD sous Windows (image .img)](Tutos/04-sd-backup-restore-windows.md)
+- [Connexion WiFi automatique sur STM32MP1](Tutos/08-connexion-wifi-automatique.md)
 
 ## Tutoriels externes
 
@@ -33,20 +34,26 @@ https://arnaud-fevrier.pedaweb.univ-amu.fr/IoT/STM32MP1.html
 ### Fichiers de STMicroelectronics déjà téléchargés
 
 - L'OS officiel (Starter Package) de STMicroelectronics pour la STM32MP1  
-[FLASH-stm32mp1-openstlinux-6.6-yocto-scarthgap-mpu-v25.06.11.tar.gz](Ressources/FLASH-stm32mp1-openstlinux-6.6-yocto-scarthgap-mpu-v25.06.11.tar.gz)
+[FLASH-stm32mp1-openstlinux-6.6-yocto-scarthgap-mpu-v26.02.18.tar.gz](Ressources/Starter%20Package/FLASH-stm32mp1-openstlinux-6.6-yocto-scarthgap-mpu-v26.02.18.tar.gz)
 
 - Le SDK (Software Development Kit) pour cross-compilation des programmes en C  
-[SDK-x86_64-stm32mp1-openstlinux-6.6-yocto-scarthgap-mpu-v25.06.11.tar.gz](Ressources/SDK-x86_64-stm32mp1-openstlinux-6.6-yocto-scarthgap-mpu-v25.06.11.tar.gz)
+[SDK-x86_64-stm32mp1-openstlinux-6.6-yocto-scarthgap-mpu-v26.02.18.tar.gz](Ressources/SDK/SDK-x86_64-stm32mp1-openstlinux-6.6-yocto-scarthgap-mpu-v26.02.18.tar.gz)
+
+- Le logiciel cubeMX pour Debian 
+[cubeMX_6.3.0_20240212_ubuntu2204.deb](Ressources/cubeMX/cubeMX_6.3.0_20240212_ubuntu2204.deb)
+
+- Le logiciel cubeIDE pour Debian
+[st-stm32cubeide_2.1.0_27993_20260219_1630_amd64.deb_bundle.sh.zip](Ressources/cubeIDE/st-stm32cubeide_2.1.0_27993_20260219_1630_amd64.deb_bundle.sh.zip)
+
+- Le logiciel STM32CubeMX pour Debian
+[stm32cubemx-lin-v6-17-0.zip](Ressources/cubeMX/stm32cubemx-lin-v6-17-0.zip)
 
 ### Images de cartes SD prêtes à être flashées
 - OS officiel (Starter Package)  
-[FlashLayout_sdcard_stm32mp157c-dk2-optee.img.zip](Backup/FlashLayout_sdcard_stm32mp157c-dk2-optee.img.zip) 
+[backup_28-02-2026_OpenSTLinux_v26.02.18_raw.img.zip](Backup/16%20Go%20SD%20card/backup_28-02-2026_OpenSTLinux_v26.02.18_raw.img.zip) 
 
 - Sauvegarde de la carte SD à la reception de la carte  
-[backup_original_07-02-2026_OS_STM.img.zip](Backup/backup_original_07-02-2026_OS_STM.img.zip)
-
-- Sauvegarde du dernier état de la carte sur l'OS orginal (en français, SSH automatique)  
-[Backup\backup_config_IP_enFR_07-02-2026_OS_STM.img.zip](Backup/backup_config_IP_enFR_07-02-2026_OS_STM.img.zip)
+[backup_07-02-2026_original_state.img.zip](Backup/16%20Go%20SD%20card/backup_07-02-2026_original_state.img.zip)
 
 ## Liens externes
 
@@ -58,6 +65,12 @@ https://www.st.com/en/embedded-software/stm32mp1starter.html
 
 - Developer Package / SDK STM32MP1  
 https://www.st.com/en/embedded-software/stm32mp1dev.html#get-software
+
+- CubeMX (configuration de projets STM32)  
+https://www.st.com/en/development-tools/stm32cubemx.html
+
+- CubeIDE (environnement de développement intégré pour STM32)  
+https://www.st.com/en/development-tools/stm32cubeide.html
 
 ### Outils pour flash de cartes SD sous Windows
 
