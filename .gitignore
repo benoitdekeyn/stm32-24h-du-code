@@ -9,3 +9,4 @@ Paquets NPM
 *node_modules/
 *dist/
 
+*.metadata/
