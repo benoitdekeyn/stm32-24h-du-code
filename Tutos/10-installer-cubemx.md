@@ -40,7 +40,6 @@ Récupérer l'archive Linux (version 6.17.0) sur le site ST :
 
 - [Site officiel STMicroelectronics](https://www.st.com/en/development-tools/stm32cubemx.html)
 
-- Version 6.17.0 locale : [cubeMX/](../Ressources/cubeMX/stm32cubemx-lin-v6-17-0.zip)
 
 Exemple de fichier :
 

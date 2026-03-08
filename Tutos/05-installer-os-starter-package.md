@@ -30,7 +30,7 @@ Objectif :
 
 1. Obtenir l’archive `FLASH-*.tar.gz` pour x86 (Architecture Intel x64)
   - Sur le site de STMicroelectronics [ST.com](https://www.st.com/en/embedded-software/stm32mp1starter.html)
-  - Verison 26.02.18 locale [FLASH-stm32mp1-openstlinux-6.6-yocto-scarthgap-mpu-v26.02.18.tar.gz](../Ressources/Starter%20Package/FLASH-stm32mp1-openstlinux-6.6-yocto-scarthgap-mpu-v26.02.18.tar.gz)
+  - Version 25.06.11 locale : [OS/](../...)
 2. Déplacer l'archive dans un dossier à la racine du disque (ex: C:\ST\) car les chemins ont une taille limitée dans le logiciel.
 3. Décompresser l'archive
 
@@ -78,11 +78,10 @@ Ces drivers permettent à Windows de reconnaître le ST-LINK et les autres inter
 
 ICI, uniquement pour la version 25.06.11 de l'OS, pour une carte SD de 16Go !
 
-- Télécharger l’image SD de la version 25.06.11 de l'OS déjà générée  
-[FLASH-stm32mp1-openstlinux-6.6-yocto-scarthgap-mpu-v25.06.11.img.zip](../Backup/OpenSTLinux_v25.06.11_FlashLayout_sdcard_stm32mp157c-dk2-optee.img.zip)
+- Télécharger une image SD pré-générée de la version souhaitée de l'OS (disponible sur le site de STMicroelectronics ou via les tutoriels).
 - Flasher la carte SD avec cette image en suivant [la dernière étape](#7-flasher-sous-windows-balenaetcher) du tutoriel de la version complète.
 
-Si la version de l'OS ou la taille de la carte n'est pas celle voulu, il faut suivre les étapes de la version complète pour re-générer l’image SD, ou bien suivre la version logicielle qui sera plus rapide.
+Si la version de l'OS ou la taille de la carte n'est pas celle souhaitée, il faut suivre les étapes de la version complète pour re-générer l'image SD, ou bien suivre la version logicielle qui sera plus rapide.
 
 --- 
 
@@ -102,7 +101,7 @@ Objectif :
 Obtenir l’archive `FLASH-*.tar.gz` :
 
 - Sur le site de STMicroelectronics [ST.com](https://www.st.com/en/embedded-software/stm32mp1starter.html)
-- Verison 26.02.18 locale [FLASH-stm32mp1-openstlinux-6.6-yocto-scarthgap-mpu-v26.02.18.tar.gz](../Ressources/Starter%20Package/FLASH-stm32mp1-openstlinux-6.6-yocto-scarthgap-mpu-v26.02.18.tar.gz)
+
 
 ### 2) Décompresser l’archive
 

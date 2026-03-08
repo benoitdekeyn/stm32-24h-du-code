@@ -31,30 +31,6 @@ https://arnaud-fevrier.pedaweb.univ-amu.fr/IoT/STM32MP1.html
 - Mail de T. Grandpierre pour la configuration de la carte   
 [Mail T. Grandpierre](Ressources/Mail-tutoriel-Thierry-Grandpierre.pdf)
 
-### Fichiers de STMicroelectronics déjà téléchargés
-
-- L'OS officiel (Starter Package) de STMicroelectronics pour la STM32MP1  
-[FLASH-stm32mp1-openstlinux-6.6-yocto-scarthgap-mpu-v26.02.18.tar.gz](Ressources/Starter%20Package/FLASH-stm32mp1-openstlinux-6.6-yocto-scarthgap-mpu-v26.02.18.tar.gz)
-
-- Le SDK (Software Development Kit) pour cross-compilation des programmes en C  
-[SDK-x86_64-stm32mp1-openstlinux-6.6-yocto-scarthgap-mpu-v26.02.18.tar.gz](Ressources/SDK/SDK-x86_64-stm32mp1-openstlinux-6.6-yocto-scarthgap-mpu-v26.02.18.tar.gz)
-
-- Le logiciel cubeMX pour Debian 
-[cubeMX_6.3.0_20240212_ubuntu2204.deb](Ressources/cubeMX/cubeMX_6.3.0_20240212_ubuntu2204.deb)
-
-- Le logiciel cubeIDE pour Debian
-[st-stm32cubeide_2.1.0_27993_20260219_1630_amd64.deb_bundle.sh.zip](Ressources/cubeIDE/st-stm32cubeide_2.1.0_27993_20260219_1630_amd64.deb_bundle.sh.zip)
-
-- Le logiciel STM32CubeMX pour Debian
-[stm32cubemx-lin-v6-17-0.zip](Ressources/cubeMX/stm32cubemx-lin-v6-17-0.zip)
-
-### Images de cartes SD prêtes à être flashées
-- OS officiel (Starter Package)  
-[backup_28-02-2026_OpenSTLinux_v26.02.18_raw.img.zip](Backup/16%20Go%20SD%20card/backup_28-02-2026_OpenSTLinux_v26.02.18_raw.img.zip) 
-
-- Sauvegarde de la carte SD à la reception de la carte  
-[backup_07-02-2026_original_state.img.zip](Backup/16%20Go%20SD%20card/backup_07-02-2026_original_state.img.zip)
-
 ## Liens externes
 
 ### STM32MP1 

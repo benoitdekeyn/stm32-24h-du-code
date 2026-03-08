@@ -12,13 +12,8 @@ Objectif :
 
 ## 1) Obtenir le SDK
 
-Au choix :   
-
-- Télécharger l’archive du SDK depuis le site de STMicroelectronics
+Télécharger l'archive du SDK depuis le site de STMicroelectronics:
 https://www.st.com/en/embedded-software/stm32mp1dev.html#get-so
-
-- Version 25.06.11 déjà téléchargée  
-[SDK-x86_64-stm32mp1-openstlinux-6.6-yocto-scarthgap-mpu-v25.06.11.tar.gz](../Ressources/SDK-x86_64-stm32mp1-openstlinux-6.6-yocto-scarthgap-mpu-v25.06.11.tar.gz)
 
 ## 2) Créer le dossier d’installation
 

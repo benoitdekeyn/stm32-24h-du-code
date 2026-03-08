@@ -66,7 +66,6 @@ Vérifier en tapant `echo $SHELL` qui doit retourner `/bin/bash`.
 Récupérer l'archive d'installation pour Debian/Ubuntu (fichier `.sh` ou `.deb_bundle.sh`) :
 
 - [Site officiel STMicroelectronics](https://www.st.com/en/development-tools/stm32cubeide.html)
-- Version 2.1.0 locale : [cubeIDE/](../Ressources/cubeIDE/st-stm32cubeide_2.1.0_27993_20260219_1630_amd64.deb_bundle.sh.zip)
 
 Exemple de fichier (version 2.1.0) :
 
