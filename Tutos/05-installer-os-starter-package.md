@@ -76,10 +76,10 @@ Ces drivers permettent à Windows de reconnaître le ST-LINK et les autres inter
 
 ## Version Plug and Play
 
-ICI, uniquement pour la version 25.06.11 de l'OS, pour une carte SD de 16Go !
+ICI, uniquement pour la version du 8 mars 2026 d'OpenSTLinux
 
-- Télécharger une image SD pré-générée de la version souhaitée de l'OS (disponible sur le site de STMicroelectronics ou via les tutoriels).
-- Flasher la carte SD avec cette image en suivant [la dernière étape](#7-flasher-sous-windows-balenaetcher) du tutoriel de la version complète.
+- Décompresser l'archive suivante : [Flash_SDCard_OpenSTLinux_v26.02.18_stm32mp157c-dk2.zip](../Ressources/Flash_SDCard_OpenSTLinux_v26.02.18_stm32mp157c-dk2.zip)
+- Flasher la carte SD avec cette image `.img` en suivant [la dernière étape](#7-flasher-sous-windows-balenaetcher) du tutoriel de la version complète.
 
 Si la version de l'OS ou la taille de la carte n'est pas celle souhaitée, il faut suivre les étapes de la version complète pour re-générer l'image SD, ou bien suivre la version logicielle qui sera plus rapide.
 
